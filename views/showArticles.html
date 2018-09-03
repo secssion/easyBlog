@@ -1,0 +1,64 @@
+{{template "pageHead" .}}
+<body>
+	<!-- 设置导航条 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">我的博客</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li><a href="/category">分类</a></li>
+                <li class="active"><a href="/article_list">文章</a></li>
+                <li><a href="/article?add=true">+</a></li>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+                {{if .IsLogin}}
+                <li><a href="/login?isExit=true">退出</a></li>
+                <li><a href="/login">退出</a></li>
+                {{else}}
+                <li><a href="/login">管理员登录</a></li>
+                {{end}}
+            </ul> -->
+        </div>
+    </nav>
+	<div class="container">
+        <div class="page-header"> </div>
+        {{if .IsShowArticles}}
+        <h1>文章列表</h1>
+        <table class="table table-hover">
+        	<thead>
+        		<tr>
+        			<th>文章名</th>
+        			<th>创建时间</th>
+                    <th>最后修改</th>
+                    <th>评论数量</th>
+        			<th>操作</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		{{range .articles}}
+        		<tr onclick="onShowArticle({{.Id}})">
+        			<th>{{.Title}}</th>
+                    <th>{{.Create}}</th>
+        			<th>{{.Updated}}</th>
+                    <th>{{.ReplyCount}}</th>
+        			<th>
+                        <a href="/article?op=Editor&id={{.Id}}">编辑</a>
+                        /
+                        <a href="/article?op=Delete&id={{.Id}}">删除</a>
+                    </th>
+        		</tr>
+        		{{end}}
+        	</tbody>
+		</table>
+        {{else}}
+        <h3>目前还没有文章，可以去添加文章哦</h3>
+        {{end}}
+	</div>
+	<script type="text/javascript">
+		function onShowArticle(id)
+		{
+            location.href="/article?id="+id
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{{template "pageHead" .}}
+<body>
+    <!-- 设置导航条 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">我的博客</a>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">首页</a></li>
+                <li><a href="/category">分类</a></li>
+                <li><a href="/article_list">文章</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{if .IsLogin}}
+                <li><a href="/login?isExit=true">退出</a></li>
+                <!-- <li><a href="/login">退出</a></li> -->
+                {{else}}
+                <li><a href="/login">管理员登录</a></li>
+                {{end}}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="container">
+        <div class="page-header"></div>
+        {{if .showArticle}}
+        <h3>你还博客文章，赶紧去开始你的创作吧！</h3>
+        {{else}}
+        <div class="container">
+            <h1>{{.at.Title}}</h1>
+            <h6 class="text-muted">文章发表于{{.at.Updated}}, 共有{{.at.ReplyCount}}个评论</h6>
+            <p>
+                {{.at.Content}}
+            </p>
+        </div>
+        {{end}}
+    </div>
+
+</body>
+</html>

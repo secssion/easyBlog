@@ -1,0 +1,22 @@
+{{template "pageHead" .}}
+
+<body>
+	<div class="container" style="width: 320px">
+		<form method="POST" action="/login">
+		  	<div class="form-group">
+			    <label>Account</label>
+			    <input class="form-control" name = "username">
+		  	</div>
+		  	<div class="form-group">
+			    <label>Password</label>
+			    <input type="password" class="form-control" name = "password">
+		  	</div>
+		  	<div class="checkbox">
+		    	<label><input type="checkbox" name="autoLogin">Remember me</label>
+		  	</div>
+		  	<button type="submit" class="btn btn-default">Submit</button>
+		  	<button type="button" class="btn btn-default" onclick="return history.go(-1)">Back</button>
+		</form>
+	</div>
+</body>
+</html>

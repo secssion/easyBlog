@@ -1,0 +1,62 @@
+{{template "pageHead" .}}
+<body>
+	<!-- 设置导航条 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">我的博客</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li><a href="/category">分类</a></li>
+                <li class="active"><a href="/article_list">文章</a></li>
+                <li><a href="/article?add=true">+</a></li>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+                {{if .IsLogin}}
+                <li><a href="/login?isExit=true">退出</a></li>
+                <li><a href="/login">退出</a></li>
+                {{else}}
+                <li><a href="/login">管理员登录</a></li>
+                {{end}}
+            </ul> -->
+        </div>
+    </nav>
+	<div class="container">
+        <div class="page-header"></div>
+        {{if .show}}
+        <div class="container">
+            <h1>{{.at.Title}}</h1>
+            <h6 class="text-muted">文章发表于{{.at.Updated}}, 共有{{.at.ReplyCount}}个评论</h6>
+            <p>
+                {{.at.Content}}
+            </p>
+        </div>
+        {{else}}
+		<form method="POST" action="/article">
+		  	<div class="form-group">
+                <label><h2>文章名称</h2></label>
+                <input class="form-control" name = "title", value="{{.at.Title}}">
+                <label><h2>文章分类</h2></label>
+                <input class="form-control" name = "category", value="{{.at.CategoryName}}">
+			    <label>
+                    <h2>文章内容
+                        <span><h5 class="text-muted">支持html格式</h5></span>
+                    </h2>
+                </label>
+			    <textarea class="form-control" rows="18" name="content">{{.at.Content}}</textarea>
+		  	</div>
+            {{if .update}}
+            <button type="submit" class="btn btn-default">update</button>
+            {{else}}
+            <button type="submit" class="btn btn-default">Add</button>
+            {{end}}
+		  	<button type="button" class="btn btn-default" onclick="return history.go(-1)">Back</button>
+		</form>
+        {{end}}
+        <script type="text/javascript">
+            function onClearAndBack(){
+                history.go(-1)
+            }
+        </script>
+	</div>
+</body>
+</html>
