@@ -11,3 +11,8 @@
 
 * ps : my easyBlog run in Golang version:1.8, so if you use before 1.11 and after 1.5 is not problem.
 * use Golang after 1.10beta, you can choose $GOPATH Pattern to run this Demo!
+
+
+### Database choose:
+plan: choose mongoDB（Follow the tide）
+
