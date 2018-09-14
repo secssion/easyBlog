@@ -1,0 +1,144 @@
+body{
+	background-color: #fdfded;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+img{
+	display: block;
+	max-width: 100%;
+	border-radius: 4px;
+	/*margin-bottom: 5px;*/
+}
+span{
+	color: #888888;
+}
+
+li:active,
+li.active{
+	background-color: #f7f1d0;
+	color: #333;
+	border-color: #f7f1d0;
+}
+
+.navbar-default{
+	background-color: #fdfdcc;
+}
+
+.navbar-brand{
+	background-image: url(../img/tx.png);
+	width: 50px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.articles-bar{
+	margin-bottom: 16px;
+
+}
+.article-list{
+	
+}
+.article-list-item{
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #eee;
+}
+
+.article-list-item:first-child{
+	padding-top: 0;
+}
+
+.article-list-item:last-child{
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.article-list-item .title{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	color: #444
+}
+
+.article-list-item .title:hover{
+	color: #337ab7;
+}
+
+.article-list-item .info{
+	margin-bottom: 8px;
+}
+
+.article-list-item .content{
+	font-size: 13px;
+	/*font-weight: 600;*/
+	/*color: #666;*/
+}
+
+.avater{
+	display: inline-block;
+}
+
+.avater{
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin-right: 3px;
+}
+
+.footer{
+	margin-top: 10px;
+	padding: 10px 0;
+	text-align: center;
+	color: #bbb;
+	border-top: 1px solid #ddd;
+}
+
+.info{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3px;
+	color: #aaa;
+	font-size: 18px;
+}
+
+.info:hover{
+	color: #337ab7
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.btn-primary{
+	font-size: 18px;
+	font-weight: 600;
+	border: 1px solid transparent;
+	background-color: #007bff;
+    border-color: #007bff;
+    color: #eee;
+}
+.btn-primary:hover{
+	color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.logLogo{
+	width: 120px;
+	height: 120px;
+	max-width: 420px;
+	margin: 12px auto;
+	margin-top: 120px;
+}
+
+.clearbline >*{
+	border-top: none;
+}
