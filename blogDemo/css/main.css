@@ -142,3 +142,20 @@ li.active{
 .clearbline >*{
 	border-top: none;
 }
+
+.title-content {
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 2rem;
+    width: 50%;
+}
+.top-header {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+    background-color: #fdfded;
+    justify-content: space-between;
+}
