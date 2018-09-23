@@ -1,40 +1,237 @@
-{{template "pageHead" .}}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<title>blog demo</title>
+</head>
 <body>
-    <!-- 设置导航条 -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">我的博客</a>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">首页</a></li>
-                <li><a href="/category">分类</a></li>
-                <li><a href="/article_list">文章</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {{if .IsLogin}}
-                <li><a href="/login?isExit=true">退出</a></li>
-                <!-- <li><a href="/login">退出</a></li> -->
-                {{else}}
-                <li><a href="/login">管理员登录</a></li>
-                {{end}}
-            </ul>
-        </div>
-    </nav>
+	<!-- top navbar -->
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="col-sm-1">
+				<div class="navbar-header">
+					<a href="home.html" class="navbar-brand"></a>
+				</div>	
+			</div>
+			<ui class="nav navbar-nav">
+				<li class="active"><a href="">home</a></li>
+				<li><a href="">category</a></li>
+				<li><a href="">article</a></li>
+			</ui>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/login">login</a></li>
+				<li><a href="/register">register</a></li>
+			</ul>
+		</div>
+	</div>
+	<h1>ppppppppp{{.path}}</h1>
+	<!-- content -->
+	<div class="container">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8">
+			<ul class="nav nav-tabs articles-bar">
+			  	<li class="active"><a href="#">Home</a></li>
+			  	<li><a href="#">Profile</a></li>
+			  	<li><a href="#">Messages</a></li>
+			</ul>
 
-    <!-- 页面内容 -->
-    <div class="container">
-        <div class="page-header"></div>
-        {{if .showArticle}}
-        <h3>你还博客文章，赶紧去开始你的创作吧！</h3>
-        {{else}}
-        <div class="container">
-            <h1>{{.at.Title}}</h1>
-            <h6 class="text-muted">文章发表于{{.at.Updated}}, 共有{{.at.ReplyCount}}个评论</h6>
-            <p>
-                {{.at.Content}}
-            </p>
-        </div>
-        {{end}}
-    </div>
-
+			<div class="article-list clearfix">
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article-list-item clearfix">
+					<div class="row">
+						<div class="col-xs-3">
+							<img src="/static/img/001.jpg">
+						</div>
+						<div class="col-xs-8">
+							<div class="row">
+								<a href="#" class="title">database</a>
+								<div class="info">
+									<span class="avater"><img src="/static/img/tx.png"></span>
+									<span>last-update-time 2018-09-13;18:06</span>
+									<span>comments: 56K</span>
+								</div>
+								<div class="content">
+									星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-list">
+				On Sunday morning Donny went into the yard and played with a dog. Sometimes a bird would come down to stay on the top's of the dog's house. Then Donny threw a stone at it. Suddenly the little boy began crying. Mother ran to Donny and asked him what was wrong. He said, "I've broken2 sister's plate. She has beaten me." "Why?" "I threw it at a bird, and it went straight to the plate."
+				 
+				Such was my naughty brother.
+				 
+				东尼是我的小弟弟，他是个调皮的孩子。
+				 
+				星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。突然，这个小男孩哭了起来。妈妈跑过去问出了什么事。他哭着说：“我姐姐盘子摔碎了，她打了我！”“为什么？”“我拿石头砸一只小鸟，但是却打碎了姐姐的盘子。”
+				 
+				哎，这是我淘气的弟弟。
+			</div>
+		</div>
+		<div class="col-sm-3">
+			On Sunday morning Donny went into the yard and played with a dog. Sometimes a bird would come down to stay on the top's of the dog's house. Then Donny threw a stone at it. Suddenly the little boy began crying. Mother ran to Donny and asked him what was wrong. He said, "I've broken2 sister's plate. She has beaten me." "Why?" "I threw it at a bird, and it went straight to the plate."
+			 
+			Such was my naughty brother.
+			 
+			东尼是我的小弟弟，他是个调皮的孩子。
+			 
+			星期天早晨，东尼跑到院子里跟小狗玩。恰巧，一直小鸟落在狗舍上，东尼就用石头砸它。突然，这个小男孩哭了起来。妈妈跑过去问出了什么事。他哭着说：“我姐姐盘子摔碎了，她打了我！”“为什么？”“我拿石头砸一只小鸟，但是却打碎了姐姐的盘子。”
+			 
+			哎，这是我淘气的弟弟。
+		</div>
+	</div>
+	<!-- bottome content -->
+	<div class="footer">
+		<div class="info">
+			<span class="avater"><img src="/static/img/tx.png"></span>
+			<a  href="#" class="info">contact us</a>
+		</div>
+		copyRight@AbnerTan 2018-09-13
+	</div>
 </body>
 </html>

@@ -1,29 +1,21 @@
 package controllers
 
 import (
-	"easyBlog/models"
-	"fmt"
-	"github.com/astaxie/beego"
+	"log"
 )
 
 type HomeController struct {
-	beego.Controller
+	BaseController
 }
 
-func (self *HomeController) Get() {
-	fmt.Println(fmt.Sprint(self.Input()))
-	self.Data["PageTitle"] = "Home Page"
-	self.Data["IsLogin"] = checkAccount(self.Ctx)
+func (this *HomeController) Get() {
+	this.Data["Website"] = "beego.me"
+	this.Data["Email"] = "astaxie@gmail.com"
 
-	articleList, err := models.GetAllArticles("DESC")
-	checkError(err)
+	log.Println("------->>", this.Data["path"])
+	this.TplName = "home.html"
+}
 
-	if len(articleList) > 0 {
-		self.Data["at"] = articleList[0]
-	} else {
-		self.Data["showArticle"] = false
-	}
-
-	// self.TplName = "index.tpl"
-	self.TplName = "home.html"
+func checkError(err error) {
+	log.Println(err)
 }

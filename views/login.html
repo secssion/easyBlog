@@ -1,22 +1,59 @@
-{{template "pageHead" .}}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
 
 <body>
-	<div class="container" style="width: 320px">
-		<form method="POST" action="/login">
-		  	<div class="form-group">
-			    <label>Account</label>
-			    <input class="form-control" name = "username">
-		  	</div>
-		  	<div class="form-group">
-			    <label>Password</label>
-			    <input type="password" class="form-control" name = "password">
-		  	</div>
-		  	<div class="checkbox">
-		    	<label><input type="checkbox" name="autoLogin">Remember me</label>
-		  	</div>
-		  	<button type="submit" class="btn btn-default">Submit</button>
-		  	<button type="button" class="btn btn-default" onclick="return history.go(-1)">Back</button>
-		</form>
-	</div>
+    <div class="container">
+        <div class="logLogo"> 
+            <a href="#"><img src="/static/img/tx.png"></a>
+        </div>
+        <form class="form-signin " method="POST" action="/login">
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <div class="input-group has-success">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </span>
+                    <input type="usernmae" class="form-control" placeholder="User Name" name="username">
+                </div>
+             </div>
+            <div class="form-group has-error">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                    </span>
+                    <input type="password" class="form-control"  placeholder="Password" name="password">
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> remeberme
+                </label>
+                    <a href="#">forgetPwd</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+    </div>
+    <h1>ppppppppp{{.path}}</h1>
+    <div class="clearbline">
+        <div class="footer ">
+            <div class="info">
+                <span class="avater"><img src="/static/img/tx.png"></span>
+                <a  href="#" class="info">contact us</a>
+            </div>
+            copyRight@AbnerTan 2018-09-13
+        </div>
+    </div>
 </body>
 </html>

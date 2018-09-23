@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<title>tset Ajax</title>
+</head>
+<body>
+	<div id="myDiv"><h2>使用 AJAX 修改该文本内容</h2></div>
+	<button type="button" onclick="loadXMLDoc()">修改内容</button>
+
+	<script type="text/javascript">
+		// execute ajax code
+		function loadXMLDoc(){
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+				// execute in IE7+, Firefox, Opera, Safari Browser
+				xmlhttp = new XMLHttpRequest()
+			}else{
+				// execute in IE6, IE5 Browser
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function(){
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "/static/ajax_info.txt/", true)
+			xmlhttp.send();
+		}
+	</script>
+</body>
+</html>
